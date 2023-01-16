@@ -38,9 +38,6 @@ multiplicação = soma * 10
 resultado_2 = multiplicação % 11
 resultado_2 = resultado_2 if resultado_2 <= 9 else 0
 
-print(resultado_1)
-print(resultado_2)
-
 
 if resultado_1 == int(cpf[9]) and resultado_2 == int(cpf[10]):
     print('CPF válido')
