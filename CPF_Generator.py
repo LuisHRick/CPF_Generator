@@ -16,9 +16,15 @@ regressivo = 10
 
 
 if criar == '1':
-    for c in range(0,8):
-        cpf += random.randint(0,9)
-        cpf *= 10
+    while True:
+        for c in range(0,8):
+            cpf += random.randint(0,9)
+            cpf *= 10
+        if len(str(cpf)) < 9:
+            cpf = 0
+            continue
+        if len(str(cpf)) == 9:
+            break
 elif criar == '2':
     cpf = input('Digite os 9 primeiros digitos desejados.\n\tCPF: ')
     cpf = cpf[0:9]
@@ -63,8 +69,19 @@ multiplicação = soma * 10
 resultado2 = multiplicação % 11
 resultado2 = resultado2 if resultado2 <= 9 else 0
 
-print(f'{cpf_1}{resultado1}{resultado2}')
+if criar == '1':
+    print('=' * 30)
+    print('CPF gerado aleatóriamente:')
+    print(f'\n{cpf_1[0:3]}.{cpf_1[3:6]}.{cpf_1[6:9]}-{resultado1}{resultado2}')
+    print('=' * 30)
 
-
+if criar == '2':
+    print('=' * 30)
+    print('Valor colocado: ')
+    print(cpf)
+    print()
+    print('CPF gerado:')
+    print(f'{cpf_1[0:3]}.{cpf_1[3:6]}.{cpf_1[6:9]}-{resultado1}{resultado2}')
+    print('=' * 30)
 
 

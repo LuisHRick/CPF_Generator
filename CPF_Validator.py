@@ -40,7 +40,10 @@ resultado_2 = resultado_2 if resultado_2 <= 9 else 0
 
 
 if resultado_1 == int(cpf[9]) and resultado_2 == int(cpf[10]):
-    print('CPF válido')
+    print('=' * 30)
+    print(f'CPF: {cpf} \033[32mválido\033[m')
+    print('=' * 30)
 else:
-    print('CPF inválido')
-
+    print('=' * 30)
+    print(f'CPF: {cpf} \033[31minválido\033[m')
+    print('=' * 30)
